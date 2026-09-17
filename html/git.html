@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+< lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Tutorial</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+>
+
+  <p><a href="../index.html">&larr; Back</a></p>
+
+  <h1>Git Tutorial</h1>
+  <p>Git is a version control system that tracks changes to your files over time, letting you save snapshots of your work and go back to them whenever you need.</p>
+
+  <h3>Install Git</h3>
+  <p>Make sure you have Git installed. To install on Debian/Ubuntu, run:</p>
+
+  <pre>
+sudo apt install git
+  </pre>
+
+  <p>To make sure Git is installed, run:</p>
+  <pre>
+git --version
+  </pre>
+  <p>Set your default branch name to <code>main</code> (only needs to be done once per machine):</p>
+  <pre>
+git config --global init.defaultBranch main
+  </pre>
+
+  <h3>Create the repository</h3>
+  <p>Create a new repository on GitHub, then clone it down to your machine:</p>
+  <pre>
+git clone https://github.com/USER-NAME/REPOSITORY-NAME.git
+cd REPOSITORY-NAME
+  </pre>
+  <p>Confirm the clone worked and check which remote it's connected to:</p>
+  <pre>
+git remote -v
+  </pre>
+
+  <h3>Use the Git workflow</h3>
+  <p>Create a file and see how Git tracks it:</p>
+  <pre>
+touch hello_world.txt
+git status
+  </pre>
+  <p>Stage the file, preparing it for a commit:</p>
+  <pre>
+git add hello_world.txt
+git status
+  </pre>
+  <p>Commit the staged file with a message describing the snapshot:</p>
+  <pre>
+git commit -m "Add hello_world.txt"
+  </pre>
+
+  <h3>Modify a file or two</h3>
+  <p>Edit an existing file, then check its status:</p>
+  <pre>
+git status
+  </pre>
+  <p>Stage just that file:</p>
+  <pre>
+git add filename.txt
+  </pre>
+  <p>Or stage everything that's changed in the current directory (and below) at once:</p>
+  <pre>
+git add .
+  </pre>
+  <p>Commit the changes:</p>
+  <pre>
+git commit -m "Describe what you changed"
+  </pre>
+
+  <h3>Push your work to GitHub</h3>
+  <pre>
+git push origin main
+git status
+  </pre>
+  <p>Refresh your repository page on GitHub — your latest commits should now show up there.</p>
+
+  <h2>Cheatsheet</h2>
+  <ul>
+    <li><code>git clone https://github.com/USER-NAME/REPOSITORY-NAME.git</code></li>
+    <li><code>git push</code> / <code>git push origin main</code></li>
+    <li><code>git add .</code></li>
+    <li><code>git commit -m "message describing changes"</code></li>
+  </ul>
+
+  <h2>Working with Remotes (GitHub)</h2>
+  <pre>
+git remote add origin https://github.com/user/repo.git
+git push origin main
+git pull origin main
+git clone https://github.com/user/repo.git
+  </pre>
+
+</body>
+</html>
